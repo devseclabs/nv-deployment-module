@@ -29,7 +29,7 @@ Terraform Neuvector Deployment using Module
 ## file - nv-deployment.tf
 ```
 module "nv-deployment" {
-    source                  = "git::https://github.com/devseclabs/nv-deployment/?ref=develop"
+    source                  = "git::https://github.com/devseclabs/nv-deployment/?ref=main"
 
     #see provider.tf - k8s context configured in ~/-kube/config
     context                 =   "my-local-context"
