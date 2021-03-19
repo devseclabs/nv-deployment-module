@@ -1,5 +1,5 @@
 module "nv-deployment" {
-source                  = "git::https://github.com/devseclabs/nv-deployment/?ref=develop"
+source                  = "git::https://github.com/devseclabs/nv-deployment/?ref=main"
 
 # dockerhub by default
 registry_username   = "registry-user"
