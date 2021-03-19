@@ -7,7 +7,7 @@ registry_password   = "registry-pass"
 #registry_server     = "registry-server"
 
 #provider - k8s context
-context = "gke-foo-dev"
+context = "my-k8s-context"
 
 #nv conf
 manager_svc_type = "LoadBalancer"
