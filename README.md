@@ -37,15 +37,16 @@ module "nv-deployment" {
     #nv conf
     manager_svc_type        =   "LoadBalancer"
     scanner_replicas        =   1
-    controller_replicas     =   1
-    nv_version              =   "4.1.2"
+    controller_replicas     =   3
+    nv_version              =   "4.2.0"
 
     #license data
     license                 =   "my-license-key""
 
-    # Dockerhub settings
-    registry_username       =   "dockerhub-user"
-    registry_password       =   "dockerhub-pass"
+    # Default Dockerhub settings
+    registry_username       =  "registry-user"
+    registry_password       = "registry-pass"
+    #registry_server        = "registry-server"
 }
 ```
 
