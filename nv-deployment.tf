@@ -16,5 +16,5 @@ controller_replicas = 3
 nv_version = "4.2.0"
 
 #license data
-license = "my-license-key"
+license = file(".secret/license.txt")
 }

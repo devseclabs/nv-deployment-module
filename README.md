@@ -24,7 +24,8 @@ Terraform Neuvector Deployment using Module
 
 ### How to deploy
 
-- Create the NV deployment file:
+- Update your license key in: ```.secret/license.txt``` file
+- Customize with your values the Neuvector Terraform Deployment file:
 
 ## file - nv-deployment.tf
 ```
@@ -34,26 +35,29 @@ module "nv-deployment" {
     #see provider.tf - k8s context configured in ~/-kube/config
     context                 =   "my-local-context"
 
+    # dockerhub by default
+    registry_username   = "registry-user"
+    registry_password   = "registry-pass"
+    #registry_server     = "registry-server"
+
     #nv conf
-    manager_svc_type        =   "LoadBalancer"
-    scanner_replicas        =   1
-    controller_replicas     =   3
-    nv_version              =   "4.2.0"
+    manager_svc_type = "LoadBalancer"
+    scanner_replicas = 1
+    controller_replicas = 3
+    nv_version = "4.2.0"
 
     #license data
-    license                 =   "my-license-key""
-
-    # Default Dockerhub settings
-    registry_username       =  "registry-user"
-    registry_password       = "registry-pass"
-    #registry_server        = "registry-server"
+    license = file(".secret/license.txt")
 }
 ```
 
--  Deploy and Manage your deployment using terraform:
-    - init your plugins  - ```terraform init```
-    - plan your deployment - ```terraform plan```
-    - apply the changes in your cluster ```terraform apply```
+- Init your terraform plugins:
+     ```terraform init```
+- Plan your deployment and check all terraform resources configuration: 
+     ```terraform plan```
+- Apply your changes:
+     ```terraform apply```
 
-### Clean Up
-- destroy your deployment: ```terraform destroy```
+### Clean Up:
+- Backup your configuration before
+- if you want to delete the deployment: ```terraform destroy```
