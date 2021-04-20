@@ -56,7 +56,11 @@ module "nv-deployment" {
     license = ".secret/license.txt"
 }
 ```
-
+- Export your kubernetes context:
+```
+export KUBE_CTX="my-k8s-context"
+export KUBE_CONFIG_PATH="~/.kube/config"
+```
 - Init your terraform plugins:
      ```terraform init```
 - Plan your deployment and check all terraform resources configuration: 
