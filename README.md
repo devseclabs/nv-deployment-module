@@ -14,13 +14,15 @@ Terraform Neuvector Deployment using Module
 |------|-------------|------|---------|:--------:|
 | nv_version | neuvector version to deploy or update | `string` | `{}` | yes |
 | context | kubernetes context (~/.kube/config) | `string` | `{}` | yes |
-| license | neuvector license key | `string` | `{}` | yes |
+| license | path of the neuvector license key | `string` | `{}` | no |
 | manager_svc_type | NodePort/LoadBalancer ... | `string` | `[]` | yes |
 | scanner_replicas | # replicas of scanners | `string` | `[]` | yes |
 | controller_replicas | # replicas of controllers | `string` | `[]` | yes |
 | registry_username | dockerhub username | `string` | `[]` | yes |
 | registry_password  | dockerhub password | `string` | `[]` | yes |
-
+| registry_server  | dockerhub by default | `string` | `[]` | no |
+| enable_config  | enable configmap - license/users | `string` | `[]` | no |
+| pass  | change nv admin password | `string` | `[]` | no |
 
 ### How to deploy
 
