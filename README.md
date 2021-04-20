@@ -25,6 +25,7 @@ Terraform Neuvector Deployment using Module
 ### How to deploy
 
 - Update your license key in: ```.secret/license.txt``` file
+- Set your credentials in the ```terraform.tfvars``` file
 - Customize with your values the Neuvector Terraform Deployment file:
 
 ## file - nv-deployment.tf
