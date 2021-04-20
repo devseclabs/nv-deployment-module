@@ -22,7 +22,8 @@ Terraform Neuvector Deployment using Module
 | registry_password  | dockerhub password | `string` | `[]` | yes |
 | registry_server  | dockerhub by default | `string` | `[]` | no |
 | enable_config  | enable configmap - license/users | `string` | `[]` | no |
-| pass  | change nv admin password | `string` | `[]` | no |
+| admin_pass  | change nv admin password | `string` | `[]` | no |
+| reader_pass  | change nv reader user password | `string` | `[]` | no |
 
 ### How to deploy
 
@@ -45,12 +46,13 @@ module "nv-deployment" {
 
     #config enable
     enable_config = true
-    #change admin pass
-    pass = "nvlabs"
+    #change admin/user pass
+    admin_pass = "admin"
+    reader_pass = "demo"
 
     #nv conf
     manager_svc_type = "LoadBalancer"
-    scanner_replicas = 1
+    scanner_replicas = 3
     controller_replicas = 3
     nv_version = "4.2.1"
 
