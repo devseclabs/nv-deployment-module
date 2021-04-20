@@ -52,7 +52,7 @@ module "nv-deployment" {
     nv_version = "4.2.1"
 
     #license data
-    license = "license.txt"
+    license = ".secret/license.txt"
 }
 ```
 
